@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Gojo vs Sukuna — 2D</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="gameWrap">
+    <canvas id="game" aria-label="Gojo vs Sukuna 2D game"></canvas>
+
+    <section id="menu" class="screen">
+      <div class="panel">
+        <div class="eyebrow">ORIGINAL 2D FAN GAME</div>
+        <h1>GOJO <span>VS</span> SUKUNA</h1>
+        <p>Cursed-energy duel in a ruined city.</p>
+        <div class="row">
+          <button id="startBtn" class="primary">START BATTLE</button>
+          <button id="controlsBtn">CONTROLS</button>
+        </div>
+        <div class="difficulty">
+          <span>DIFFICULTY</span>
+          <button data-difficulty="easy">EASY</button>
+          <button data-difficulty="normal" class="selected">NORMAL</button>
+          <button data-difficulty="hard">HARD</button>
+        </div>
+        <div id="controlsPanel" class="hidden">
+          <b>Desktop</b>
+          <p>WASD move · Mouse aim · Left click attack · Q Blue · E Red · R Purple · F Teleport · X Six Eyes · C Infinity · V Unlimited Void · Space Dodge · Shift Sprint · Esc Pause</p>
+          <b>Mobile</b>
+          <p>Left joystick move · Right side drag aim · Action buttons use the same abilities.</p>
+        </div>
+        <div id="error" class="error hidden"></div>
+        <small>No external engines, models, or assets. Runs entirely from Canvas 2D.</small>
+      </div>
+    </section>
+
+    <section id="hud" class="hidden">
+      <div class="barbox gojo">
+        <div class="label">GOJO</div>
+        <div class="bar"><i id="gojoHp"></i></div>
+        <div class="energy"><i id="gojoEnergy"></i></div>
+      </div>
+      <div id="state">SUKUNA: APPROACH</div>
+      <div class="barbox sukuna">
+        <div class="label">SUKUNA</div>
+        <div class="bar"><i id="sukunaHp"></i></div>
+        <div class="energy"><i id="sukunaEnergy"></i></div>
+      </div>
+
+      <div id="abilities">
+        <button data-key="Q">Q<br><span>BLUE</span></button>
+        <button data-key="E">E<br><span>RED</span></button>
+        <button data-key="R">R<br><span>PURPLE</span></button>
+        <button data-key="F">F<br><span>TP</span></button>
+        <button data-key="X">X<br><span>SIX</span></button>
+        <button data-key="C">C<br><span>∞</span></button>
+        <button data-key="V">V<br><span>VOID</span></button>
+      </div>
+      <button id="pauseBtn">Ⅱ</button>
+      <div id="crosshair"></div>
+      <div id="message"></div>
+    </section>
+
+    <section id="mobile" class="hidden">
+      <div id="stickBase"><div id="stick"></div></div>
+      <div id="mobileLook">DRAG TO AIM</div>
+      <div id="mobileActions">
+        <button data-key="Q">Q</button><button data-key="E">E</button>
+        <button data-key="R">R</button><button data-key="F">F</button>
+        <button data-key="X">X</button><button data-key="C">∞</button>
+        <button data-key="V">V</button><button data-key="SPACE">D</button>
+        <button data-key="SHIFT">S</button>
+      </div>
+    </section>
+
+    <section id="endScreen" class="screen hidden">
+      <div class="panel">
+        <div id="endTitle"></div>
+        <p id="endText"></p>
+        <button id="restartBtn" class="primary">RESTART</button>
+      </div>
+    </section>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>
